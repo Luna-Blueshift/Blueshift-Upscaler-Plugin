@@ -121,6 +121,7 @@ public:
 	//-----------------------------------------------------------------------------------------------------------------
 private:
 	bool IsFSRSupported() const;
+	bool IsFFISupported() const;
 	void UpdateFSREnabled();
 	void ApplyFSRSettings();
 	void SetFSRToDefaults();
@@ -164,6 +165,7 @@ public:
 	//-----------------------------------------------------------------------------------------------------------------
 private:
 	bool IsXeSSSupported() const;
+	bool IsXeFGSupported() const;
 	void UpdateXeSSEnabled();
 	void ApplyXeSSSettings();
 	void SetXeSSToDefaults();
@@ -190,4 +192,27 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "XeSS", meta = (DisplayName = "Set XeSS Quality Mode"))
 	void SetXeSSQualityMode(const int32 InQualityMode);
+
+	//-----------------------------------------------------------------------------------------------------------------
+	//	FRAME GEN
+	//-----------------------------------------------------------------------------------------------------------------
+private:
+	/**
+	 *	Do we want to turn on frame gen if possible?
+	 *	DLSS = Automatic, so this is not necessary
+	 *	FSR = FFI (frame interpolation)
+	 *	XeSS = XeSS-FG (frame gen)
+	 */
+	UPROPERTY(Config)
+	bool bDesiredFrameGen = false;
+
+public:
+	UFUNCTION(BlueprintPure, Category = "FrameGen")
+	FORCEINLINE bool GetDesiredFrameGen() const { return bDesiredFrameGen; }
+	
+	UFUNCTION(BlueprintCallable, Category = "FrameGen")
+	void SetDesiredFrameGen(const bool bEnabled);
+
+	UFUNCTION(BlueprintCallable, Category = "FrameGen")
+	bool IsFrameGenSupported(const EBlueshiftUpscalerMode InUpscalerMode) const;
 };

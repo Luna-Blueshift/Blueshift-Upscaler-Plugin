@@ -21,6 +21,11 @@ bool UBlueshiftUpscalerSubsystem::IsFSRSupported() const
 	return WITH_FSR;
 }
 
+bool UBlueshiftUpscalerSubsystem::IsFFISupported() const
+{
+	return WITH_FSR;
+}
+
 void UBlueshiftUpscalerSubsystem::UpdateFSREnabled()
 {
 #if WITH_FSR
@@ -71,6 +76,12 @@ void UBlueshiftUpscalerSubsystem::ApplyFSRSettings()
 	CVarFSR3Sharpness->Set(FSRSharpness);
 #endif
 	UE_LOG(LogBlueshiftUpscaler, Log, TEXT("%hs: FSR Sharpness changed from %f to %f (desired: %f)"), __FUNCTION__, OldSharpness, CVarFSR4Sharpness->GetFloat(), FSRSharpness);
+
+	// Frame Interpolation (aka. Frame Gen)
+#if WITH_FSR4 || WITH_FSR3
+	CVarEnableFFXFI->Set(bDesiredFrameGen);
+	UE_LOG(LogBlueshiftUpscaler, Log, TEXT("%hs: FSR Frame Interpolation: %s"), __FUNCTION__, bDesiredFrameGen ? TEXT("on") : TEXT("off"));
+#endif
 #endif
 }
 

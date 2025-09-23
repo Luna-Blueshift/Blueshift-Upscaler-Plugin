@@ -99,6 +99,7 @@ public class BlueshiftUpscaler : ModuleRules
 		if (BlueshiftUpscalerUtils.DoesPluginExistAndIsEnabled(Target, "XeSS"))
 		{
 			PublicDependencyModuleNames.Add("XeSSBlueprint");
+			PublicDependencyModuleNames.Add("XeFGBlueprint");
 			PublicDefinitions.Add("WITH_XESS=1");
 		}
 		else

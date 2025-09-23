@@ -72,6 +72,7 @@ void UBlueshiftUpscalerSubsystem::ApplySettings()
 void UBlueshiftUpscalerSubsystem::SetToDefaults()
 {
 	UE_LOG(LogBlueshiftUpscaler, Log, TEXT("%hs"), __FUNCTION__);
+	bDesiredFrameGen = false;
 	SetDLSSToDefaults();
 	SetFSRToDefaults();
 	SetXeSSToDefaults();
