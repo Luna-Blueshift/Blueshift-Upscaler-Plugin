@@ -1,0 +1,23 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Image Quality (Blueshift)",
+	"Description": "Framework to streamline interoperability with anti-aliasing, and upscalers like DLSS, FSR, XeSS etc.",
+	"Category": "Rendering",
+	"CreatedBy": "Blueshift Interactive",
+	"CreatedByURL": "",
+	"DocsURL": "https://github.com/Luna-Blueshift/Blueshift-Image-Quality-Plugin/wiki",
+	"MarketplaceURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "BlueshiftIQ",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}

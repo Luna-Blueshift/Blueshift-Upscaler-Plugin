@@ -1,0 +1,26 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Image Quality Game Settings (Blueshift)",
+	"Description": "Plugin which provides Game Settings for various image quality settings & upscalers for use with the Blueshift Image Quality plugin. Both Blueshift IQ and Blueshift Game Settings plugins need to be enabled.",
+	"Category": "Rendering",
+	"CreatedBy": "Blueshift Interactive",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Plugins": [
+		{
+			"Name": "BlueshiftIQ",
+			"Enabled": true
+		},
+		{
+			"Name": "BlueshiftGameSettings",
+			"Enabled": true
+		}
+	]
+}
